@@ -30,16 +30,16 @@ set(CMAKE_MODULE_PATH
 
 include(FetchContent)
 
-# FetchContent_Declare(Sodium
-#  GIT_REPOSITORY https://github.com/AmineKhaldi/libsodium-cmake.git
-#  # Latest commit at the moment this was added here
-#  # Anchored to libsodium v1.0.18
-#  GIT_TAG f73a3fe1afdc4e37ac5fe0ddd401bf521f6bba65
-# )
-# set(SODIUM_PCH "on" CACHE STRING "")
-# set(SODIUM_DISABLE_TESTS "on" CACHE STRING "")
-# set(SODIUM_CHIA_MINIMAL "on" CACHE STRING "")
-# FetchContent_MakeAvailable(Sodium)
+FetchContent_Declare(Sodium
+ GIT_REPOSITORY https://github.com/Frank-GER/libsodium-cmake.git
+ # Latest commit at the moment this was added here
+ # Anchored to libsodium v1.0.18
+ GIT_TAG 5d01ba85332c7d60e576c795f8a45fa67f59c452
+)
+set(SODIUM_PCH "on" CACHE STRING "")
+set(SODIUM_DISABLE_TESTS "on" CACHE STRING "")
+set(SODIUM_CHIA_MINIMAL "on" CACHE STRING "")
+FetchContent_MakeAvailable(Sodium)
 
 if (DEFINED ENV{RELIC_MAIN})
   set(RELIC_GIT_TAG "origin/main")
